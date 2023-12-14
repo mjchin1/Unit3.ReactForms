@@ -4,10 +4,13 @@ import SignUpForm from './components/SignUpForm'
 import './App.css'
 
 function App() {
+  const [token, setToken] = useState(null);
+  const [currentUserName, setCurrentUserName] = useState(""); 
+ 
   return (
     <>
-     <Authenticate/>
-     <SignUpForm/>
+     <SignUpForm setCurrentUserName={setCurrentUserName} token={token} setToken={setToken} />
+     <Authenticate currentUserName={currentUserName} token={token} setToken={setToken}/>
     </>
   )
 }
